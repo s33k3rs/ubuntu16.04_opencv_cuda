@@ -222,6 +222,7 @@ cmake \
       -DOPENCV_TEST_DATA_PATH=$DOWNLOAD_PATH/opencv_extra/testdata/           \
       -DWITH_CUBLAS=ON                                                        \
       -DWITH_CUDA=ON                                                          \
+      -DCUDA_GENERATION=Pascal                                                \
       -DWITH_FFMPEG=ON                                                        \
       -DWITH_GDAL=ON                                                          \
       -DWITH_GSTREAMER=ON                                                     \
