@@ -28,10 +28,10 @@ fi
 # Script
 msg "Installation Started"
 
-INSTALL_PATH="/usr/local/opencv"
+INSTALL_PATH="/usr/local"
 msg "OpenCV will be installed in $INSTALL_PATH"
 
-DOWNLOAD_PATH=$1
+DOWNLOAD_PATH="/home/wahyudi/Downloads"
 msg "OpenCV will be downloaded in $DOWNLOAD_PATH"
 
 CUDA_PATH="/usr/local/cuda"
@@ -158,10 +158,7 @@ msg "All deps installed. Continuing with installation"
 # Downloading
 cd $DOWNLOAD_PATH
 
-REPOS="ceres-solver,https://ceres-solver.googlesource.com/ceres-solver
-  opencv,https://github.com/opencv/opencv.git
-  opencv_contrib,https://github.com/opencv/opencv_contrib.git
-  opencv_extra,https://github.com/opencv/opencv_extra.git"
+REPOS="ceres-solver,https://ceres-solver.googlesource.com/ceres-solver"
 
 for repo in $REPOS; do
   IFS=","
@@ -222,7 +219,6 @@ cmake \
       -DOPENCV_TEST_DATA_PATH=$DOWNLOAD_PATH/opencv_extra/testdata/           \
       -DWITH_CUBLAS=ON                                                        \
       -DWITH_CUDA=ON                                                          \
-      -DCUDA_GENERATION=Pascal                                                \
       -DWITH_FFMPEG=ON                                                        \
       -DWITH_GDAL=ON                                                          \
       -DWITH_GSTREAMER=ON                                                     \
